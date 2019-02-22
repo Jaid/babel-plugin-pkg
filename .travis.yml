@@ -6,7 +6,12 @@ script:
   - npm run build:prod
   - export PKG_NAME=$(node -e "console.log(require('./dist/package/production/package').name)")
   - export PKG_VERSION=$(node -e "console.log(require('./dist/package/production/package').version)")
-  - if [[ -d dist/homepage/$PKG_NAME/$PKG_VERSION ]] ; then ; npm run test:coverage ; fi
+  - if [[ -d dist/homepage/$PKG_NAME/$PKG_VERSION ]]
+  - then
+  - npm run test:coverage
+  - cp -r dist/homepage/$PKG_NAME/$PKG_VERSION page
+  - cp -r dist/jest/coverage/lcov-report page/coverage
+  - fi
 jobs:
   include:
     - stage: Deploy
