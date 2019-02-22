@@ -18,11 +18,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "read-pkg-up": "^4.0.0"
   },
   "devDependencies": {
     "ajv": "^6.9.1",
     "babel-jest": "^24.1.0",
+    "babel-plugin-tester": "^6.0.0",
     "babel-preset-jaid": "^4.3.0",
     "caniuse-lite": "^1.0.30000938",
     "cross-env": "^5.2.0",
