@@ -28,7 +28,7 @@
     "babel-preset-jaid": "^4.3.0",
     "caniuse-lite": "^1.0.30000938",
     "cross-env": "^5.2.0",
-    "eslint": "^5.14.1",
+    "eslint": "^5.15.1",
     "eslint-config-jaid": "^1.12.0",
     "jest": "^24.1.0",
     "opn-cli": "^4.0.0",
