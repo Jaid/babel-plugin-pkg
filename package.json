@@ -22,7 +22,7 @@
     "read-pkg-up": "^4.0.0"
   },
   "devDependencies": {
-    "ajv": "^6.9.1",
+    "ajv": "^6.10.0",
     "babel-jest": "^24.1.0",
     "babel-plugin-tester": "^6.0.0",
     "babel-preset-jaid": "^4.3.0",
