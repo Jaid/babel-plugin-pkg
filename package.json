@@ -12,7 +12,7 @@
     "babel-jest": "^24.5.0",
     "babel-plugin-tester": "^6.0.1",
     "babel-preset-jaid": "^5.5.0",
-    "caniuse-lite": "^1.0.30000943",
+    "caniuse-lite": "^1.0.30000955",
     "eslint": "^5.15.1",
     "eslint-config-jaid": "^1.12.0",
     "jest": "^24.5.0",
