@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
-    "@babel/runtime": "^7.3.4",
+    "@babel/runtime": "^7.4.3",
     "debug": "^4.1.1",
     "read-pkg-up": "^4.0.0"
   },
