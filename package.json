@@ -8,6 +8,7 @@
     "read-pkg-up": "^6.0.0"
   },
   "devDependencies": {
+    "acorn": "^6.1.1",
     "ajv": "^6.10.0",
     "babel-jest": "^24.8.0",
     "babel-plugin-tester": "^6.2.1",
