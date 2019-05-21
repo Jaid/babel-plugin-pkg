@@ -2,6 +2,8 @@ import path from "path"
 
 import {sync as readPkgUp} from "read-pkg-up"
 
+const debug = require("debug")(_PKG_NAME)
+
 export default ({types}) => ({
   pre() {
     this.init = state => {
@@ -15,6 +17,12 @@ export default ({types}) => ({
         ...state.opts,
       }
       this.options.packageJson = readPkgUp(this.options.cwd)
+      if (this.options.packageJson.path) {
+        debug("Got package data from %s", this.options.packageJson.path)
+      }
+      if (this.options.packageJson.package) {
+        debug("Data: %o", this.options.packageJson.package)
+      }
     }
   },
   visitor: {
@@ -25,11 +33,11 @@ export default ({types}) => ({
         if (fieldName === "PATH" && this.options.packageJson?.path) {
           needle.replaceWith(types.valueToNode(this.options.packageJson.path))
         }
-        if (this.options.nameFallback && fieldName === "NAME" && !this.options.packageJson?.pkg?.name) {
+        if (this.options.nameFallback && fieldName === "NAME" && !this.options.packageJson?.package?.name) {
           needle.replaceWith(types.valueToNode(path.basename(this.options.cwd)))
         }
-        if (this.options.packageJson?.pkg?.[fieldName.toLowerCase()]) {
-          needle.replaceWith(types.valueToNode(this.options.packageJson.pkg[fieldName.toLowerCase()]))
+        if (this.options.packageJson?.package?.[fieldName.toLowerCase()]) {
+          needle.replaceWith(types.valueToNode(this.options.packageJson.package[fieldName.toLowerCase()]))
         }
       }
     },
