@@ -29,9 +29,12 @@ export default ({types}) => ({
     ReferencedIdentifier(needle, state) {
       this.init(state)
       if (needle.node.name.startsWith(this.options.prefix)) {
-        const fieldName = needle.node.name.slice(this.options.prefix.length)
+        let fieldName = needle.node.name.slice(this.options.prefix.length)
         if (fieldName === "PATH" && this.options.packageJson?.path) {
           needle.replaceWith(types.valueToNode(this.options.packageJson.path))
+        }
+        if (fieldName === "TITLE" && !this.options.packageJson?.package?.title) {
+          fieldName = "NAME"
         }
         if (this.options.nameFallback && fieldName === "NAME" && !this.options.packageJson?.package?.name) {
           needle.replaceWith(types.valueToNode(path.basename(this.options.cwd)))
