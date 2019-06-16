@@ -11,15 +11,15 @@
     "acorn": "^6.1.1",
     "ajv": "^6.10.0",
     "babel-jest": "^24.8.0",
-    "babel-plugin-tester": "^6.2.1",
-    "babel-preset-jaid": "^6.4.0",
-    "caniuse-lite": "^1.0.30000971",
+    "babel-plugin-tester": "^6.4.0",
+    "babel-preset-jaid": "^6.6.0",
+    "caniuse-lite": "^1.0.30000974",
     "eslint": "^5.16.0",
-    "eslint-config-jaid": "^1.12.1",
+    "eslint-config-jaid": "^1.14.0",
     "jest": "^24.8.0",
     "open-cli": "^5.0.0",
     "rimraf": "^2.6.3",
-    "webpack-config-jaid": "^5.2.0"
+    "webpack-config-jaid": "^5.7.0"
   },
   "scripts": {
     "clean": "rimraf dist/ test/**/dist/",
