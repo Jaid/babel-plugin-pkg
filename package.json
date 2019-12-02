@@ -34,5 +34,6 @@
     "test:debug": "DEBUG=\"$(basename $PWD),$(basename $PWD):*\" NODE_ENV=test node --inspect=9229 node_modules/jest/bin/jest.js --runInBand",
     "prepareActionJest": "npm run build:prod"
   },
-  "name": "babel-plugin-pkg"
+  "name": "babel-plugin-pkg",
+  "description": "Resolves _PKG_VERSION to version from package.json - also works with any other field!"
 }
