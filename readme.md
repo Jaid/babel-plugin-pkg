@@ -1,14 +1,32 @@
 # babel-plugin-pkg
 
 
-Resolves _PKG_VERSION to version from package.json - also works with any other field!
+<a href="https://raw.githubusercontent.com/Jaid/babel-plugin-pkg/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/babel-plugin-pkg?style=flat-square" alt="License"/></a>  
+<a href="https://actions-badge.atrox.dev/Jaid/babel-plugin-pkg/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fbabel-plugin-pkg%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/commits-since/Jaid/babel-plugin-pkg/v1.2.2?style=flat-square&logo=github" alt="Commits since v1.2.2"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/last-commit/Jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/issues"><img src="https://img.shields.io/github/issues/Jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/v/babel-plugin-pkg?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/dm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Downloads"/></a>
+
+**Resolves _PKG_VERSION to version from package.json - also works with any other field!**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Installation
-<a href='https://npmjs.com/package/babel-plugin-pkg'><img alt='npm logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/npm.png'/></a>
+<a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/badge/npm-babel--plugin--pkg-C23039?style=flat-square&logo=npm" alt="babel-plugin-pkg on npm"/></a>
 ```bash
 npm install --save babel-plugin-pkg@^1.2.2
 ```
-<a href='https://yarnpkg.com/package/babel-plugin-pkg'><img alt='Yarn logo' src='https://github.com/Jaid/action-readme/raw/master/images/base-assets/yarn.png'/></a>
+<a href="https://yarnpkg.com/package/babel-plugin-pkg"><img src="https://img.shields.io/badge/Yarn-babel--plugin--pkg-2F8CB7?style=flat-square&logo=yarn&logoColor=white" alt="babel-plugin-pkg on Yarn"/></a>
 ```bash
 yarn add babel-plugin-pkg@^1.2.2
 ```
@@ -16,11 +34,35 @@ yarn add babel-plugin-pkg@^1.2.2
 
 
 
+
+
+
+
+## Development
+
+
+
+Setting up:
+```bash
+git clone git@github.com:Jaid/babel-plugin-pkg.git
+cd babel-plugin-pkg
+npm install
+```
+Testing:
+```bash
+npm run test:dev
+```
+Testing in production environment:
+```bash
+npm run test
+```
+
+
 ## License
 ```text
 MIT License
 
-Copyright © 2019, Jaid <jaid.jsx@gmail.com> (github.com/jaid)
+Copyright © 2020, Jaid <jaid.jsx@gmail.com> (github.com/jaid)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
