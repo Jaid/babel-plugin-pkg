@@ -1,9 +1,9 @@
 # babel-plugin-pkg
 
 
-<a href="https://raw.githubusercontent.com/Jaid/babel-plugin-pkg/master/license.txt"><img src="https://img.shields.io/github/license/Jaid/babel-plugin-pkg?style=flat-square" alt="License"/></a>  
-<a href="https://actions-badge.atrox.dev/Jaid/babel-plugin-pkg/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2FJaid%2Fbabel-plugin-pkg%2Fbadge" alt="Build status"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/commits-since/Jaid/babel-plugin-pkg/v1.2.2?style=flat-square&logo=github" alt="Commits since v1.2.2"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/last-commit/Jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/issues"><img src="https://img.shields.io/github/issues/Jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Issues"/></a>  
-<a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/v/babel-plugin-pkg?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/Jaid/babel-plugin-pkg/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/dm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Downloads"/></a>
+<a href="https://raw.githubusercontent.com/jaid/babel-plugin-pkg/master/license.txt"><img src="https://img.shields.io/github/license/jaid/babel-plugin-pkg?style=flat-square" alt="License"/></a> <a href="https://github.com/sponsors/jaid"><img src="https://img.shields.io/badge/<3-Sponsor-FF45F1?style=flat-square" alt="Sponsor babel-plugin-pkg"/></a>
+<a href="https://actions-badge.atrox.dev/jaid/babel-plugin-pkg/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaid%2Fbabel-plugin-pkg%2Fbadge" alt="Build status"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/commits-since/jaid/babel-plugin-pkg/v1.2.2?style=flat-square&logo=github" alt="Commits since v1.2.2"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/last-commit/jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/issues"><img src="https://img.shields.io/github/issues/jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Issues"/></a>  
+<a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/v/babel-plugin-pkg?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/dm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Downloads"/></a>
 
 **Resolves _PKG_VERSION to version from package.json - also works with any other field!**
 
@@ -37,14 +37,13 @@ yarn add babel-plugin-pkg@^1.2.2
 
 
 
-
 ## Development
 
 
 
 Setting up:
 ```bash
-git clone git@github.com:Jaid/babel-plugin-pkg.git
+git clone git@github.com:jaid/babel-plugin-pkg.git
 cd babel-plugin-pkg
 npm install
 ```
