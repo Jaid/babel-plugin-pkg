@@ -40,5 +40,22 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jaid/babel-plugin-pkg"
-  }
+  },
+  "homepage": "https://github.com/Jaid/babel-plugin-pkg",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "convert",
+    "name",
+    "package",
+    "package-json",
+    "pkg",
+    "resolve",
+    "resolver",
+    "transform",
+    "transformation",
+    "transpile",
+    "transpiler",
+    "version"
+  ]
 }
