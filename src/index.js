@@ -1,5 +1,4 @@
 import path from "path"
-
 import {sync as readPkgUp} from "read-pkg-up"
 
 const debug = require("debug")(_PKG_NAME)
@@ -12,7 +11,7 @@ export default ({types}) => ({
       }
       this.options = {
         cwd: state.cwd,
-        prefix: "_PKG_",
+        prefix: "process.env.REPLACE_",
         nameFallback: true,
         ...state.opts,
       }
@@ -29,6 +28,7 @@ export default ({types}) => ({
     ReferencedIdentifier(needle, state) {
       this.init(state)
       if (needle.node.name.startsWith(this.options.prefix)) {
+        // debug(`needle.node.name = ${needle.node.name}`)
         let fieldName = needle.node.name.slice(this.options.prefix.length)
         if (fieldName === "PATH" && this.options.packageJson?.path) {
           needle.replaceWith(types.valueToNode(this.options.packageJson.path))

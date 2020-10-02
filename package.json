@@ -3,22 +3,22 @@
   "version": "1.2.2",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
-    "debug": "^4.1.1",
+    "debug": "^4.2.0",
     "read-pkg-up": "^7.0.1"
   },
   "devDependencies": {
-    "acorn": "^7.4.0",
-    "ajv": "^6.12.3",
-    "babel-jest": "^26.2.2",
-    "babel-plugin-tester": "^9.2.0",
-    "babel-preset-jaid": "^8.1.1",
-    "browserslist-config-jaid-node": "^2.2.2",
-    "caniuse-lite": "^1.0.30001112",
-    "eslint": "^7.6.0",
+    "acorn": "^8.0.3",
+    "ajv": "^6.12.5",
+    "babel-jest": "^26.3.0",
+    "babel-plugin-tester": "^10.0.0",
+    "babel-preset-jaid": "^8.1.2",
+    "browserslist-config-jaid-node": "^3.0.0",
+    "caniuse-lite": "^1.0.30001142",
+    "eslint": "^7.10.0",
     "eslint-config-jaid": "^1.49.0",
-    "jest": "^26.2.2",
+    "jest": "^26.4.2",
     "rimraf": "^3.0.2",
-    "webpack-config-jaid": "^11.12.0"
+    "webpack-config-jaid": "^11.13.0"
   },
   "scripts": {
     "clean": "rimraf dist/",
