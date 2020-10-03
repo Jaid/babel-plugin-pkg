@@ -1,4 +1,4 @@
 /* eslint-disable */
 module.exports = {
-  name: _PKG_NAME,
+  name: process.env.REPLACE_PKG_NAME,
 }
