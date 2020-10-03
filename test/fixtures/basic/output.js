@@ -1,4 +1,4 @@
 /* eslint-disable */
 module.exports = {
-  name: "babel-plugin-pkg"
+  name: "babel-plugin-pkg",
 };

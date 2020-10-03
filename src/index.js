@@ -1,74 +1,104 @@
+import camelcase from "camelcase"
 import path from "path"
 import {sync as readPkgUp} from "read-pkg-up"
 
 const debug = require("debug")(_PKG_NAME)
 
 /**
- * @return {import("babel")}
+ * @typedef {Object} BabelPlugin
+ * @prop {() => void} [pre]
+ * @prop {() => void} [post]
+ * @prop {import("@babel/traverse").Visitor} visitor
  */
-export default () => ({
-  pre() {
-    this.init = state => {
-      if (this.options) {
-        return
-      }
-      this.options = {
-        cwd: state.cwd,
-        prefix: "REPLACE_PKG_",
-        nameFallback: true,
-        ...state.opts,
-      }
-      this.options.packageJson = readPkgUp(this.options.cwd)
-      if (this.options.packageJson.path) {
-        debug("Got package data from %s", this.options.packageJson.path)
-      }
-      if (this.options.packageJson.package) {
-        debug("Data: %o", this.options.packageJson.package)
-      }
+
+/**
+ * @return {BabelPlugin}
+ */
+export default ({types}) => {
+  let options
+  /**
+   * @type {(state: any) => void}
+   */
+  const init = state => {
+    if (options) {
+      return
     }
-  },
-  visitor: {
-    MemberExpression(needle, state) {
-      this.init(state)
-      const propertyName = needle.node.property?.name
-      if (!propertyName) {
-        return
-      }
-      if (!propertyName.startsWith(this.options.prefix)) {
-        return
-      }
-      const parentObject = needle.node.object
-      if (!parentObject) {
-        return
-      }
-      if (parentObject.property.name !== "env") {
-        return
-      }
-      const parentParentObject = parentObject.object
-      if (!parentParentObject) {
-        return
-      }
-      if (parentParentObject.name !== "process") {
-        return
-      }
-      console.log("123")
-      debugger
-      // if (needle.node.name.startsWith(this.options.prefix)) {
-      //   // debug(`needle.node.name = ${needle.node.name}`)
-      //   let fieldName = needle.node.name.slice(this.options.prefix.length)
-      //   if (fieldName === "PATH" && this.options.packageJson?.path) {
-      //     needle.replaceWith(types.valueToNode(this.options.packageJson.path))
-      //   }
-      //   if (fieldName === "TITLE" && !this.options.packageJson?.package?.title) {
-      //     fieldName = "NAME"
-      //   }
-      //   if (this.options.nameFallback && fieldName === "NAME" && !this.options.packageJson?.package?.name) {
-      //     needle.replaceWith(types.valueToNode(path.basename(this.options.cwd)))
-      //   }
-      //   if (this.options.packageJson?.package?.[fieldName.toLowerCase()]) {
-      //     needle.replaceWith(types.valueToNode(this.options.packageJson.package[fieldName.toLowerCase()]))
-      //   }
-      // }
+    options = {
+      cwd: state.cwd,
+      prefix: "REPLACE_PKG_",
+      nameFallback: true,
+      ...state.opts,
+    }
+    options.packageJson = readPkgUp(options.cwd)
+    if (options.packageJson.path) {
+      debug("Got package data from %s", options.packageJson.path)
+    }
+    if (options.packageJson.package) {
+      debug("Data: %o", options.packageJson.package)
+    }
+  }
+  /**
+   * @param {string} fieldName
+   * @return {*}
+   */
+  const getReplaceValue = fieldName => {
+    if (fieldName === "path" && options.packageJson?.path) {
+      return options.packageJson.path
+    }
+    if (fieldName === "title" && !options.packageJson?.packageJson?.title) {
+      fieldName = "name"
+    }
+    if (options.nameFallback && fieldName === "name" && !options.packageJson?.packageJson?.name) {
+      return path.basename(options.cwd)
+    }
+    if (options.packageJson?.packageJson?.[fieldName]) {
+      return options.packageJson.packageJson[fieldName]
+    }
+  }
+  return {
+    visitor: {
+      /**
+       * @param {Object} needle Need to disable TypeScript checks here, they are not accurate
+       * @param {Object} state
+       */
+      MemberExpression(needle, state) {
+        init(state)
+        /**
+         * @type {string}
+         */
+        const propertyName = needle.node.property?.name
+        if (!propertyName) {
+          return
+        }
+        if (!propertyName.startsWith(options.prefix)) {
+          return
+        }
+        const parentObject = needle.node.object
+        if (!parentObject?.property) {
+          return
+        }
+        if (parentObject.property.name !== "env") {
+          return
+        }
+        const parentParentObject = parentObject.object
+        if (!parentParentObject) {
+          return
+        }
+        if (parentParentObject.name !== "process") {
+          return
+        }
+        const fieldName = camelcase(propertyName.slice(options.prefix.length))
+        const replaceValue = getReplaceValue(fieldName)
+        if (replaceValue !== undefined) {
+          // Wrapping in enabled check to avoid unneeded JSON.stringify calls
+          if (debug.enabled) {
+            debug(`process.env.${propertyName} → ${JSON.stringify(replaceValue)}`)
+          }
+          needle.replaceWith(types.valueToNode(replaceValue))
+        } else {
+          debug(`Requested package field ${fieldName} in process.env.${propertyName}, but it was not found`)
+        }
+      },
     },
-  },
-})
+  }
+}
