@@ -2,7 +2,7 @@ import camelcase from "camelcase"
 import path from "path"
 import {sync as readPkgUp} from "read-pkg-up"
 
-const debug = require("debug")(_PKG_NAME)
+const debug = require("debug")(process.env.REPLACE_PKG_NAME)
 
 /**
  * @typedef {Object} BabelPlugin
