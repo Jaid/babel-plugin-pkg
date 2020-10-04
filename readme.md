@@ -16,20 +16,20 @@
 <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/badge/npm-babel--plugin--pkg-C23039?style=flat-square&logo=npm" alt="babel-plugin-pkg on npm"/></a>
 
 ```bash
-npm install --save babel-plugin-pkg@^2.0.0
+npm install --save-dev babel-plugin-pkg@^2.0.0
 ```
 
 <a href="https://yarnpkg.com/package/babel-plugin-pkg"><img src="https://img.shields.io/badge/Yarn-babel--plugin--pkg-2F8CB7?style=flat-square&logo=yarn&logoColor=white" alt="babel-plugin-pkg on Yarn"/></a>
 
 ```bash
-yarn add babel-plugin-pkg@^2.0.0
+yarn add --dev babel-plugin-pkg@^2.0.0
 ```
 
 <a href="https://github.com/jaid/babel-plugin-pkg/packages"><img src="https://img.shields.io/badge/GitHub Packages-@jaid/babel--plugin--pkg-24282e?style=flat-square&logo=github" alt="@jaid/babel-plugin-pkg on GitHub Packages"/></a>  
 (if [configured properly](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages))
 
 ```bash
-npm install --save @jaid/babel-plugin-pkg@^2.0.0
+npm install --save-dev @jaid/babel-plugin-pkg@^2.0.0
 ```
 
 
