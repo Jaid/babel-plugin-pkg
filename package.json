@@ -38,7 +38,7 @@
     "prepareActionJest": "npm run build:prod"
   },
   "name": "babel-plugin-pkg",
-  "description": "Resolves process.env.REPLACE_PKG_VERSION to version from package.json - also works with any other field!",
+  "description": "Resolves _PKG_VERSION to version from package.json - also works with any other field!",
   "funding": "https://github.com/sponsors/jaid",
   "repository": {
     "type": "git",
