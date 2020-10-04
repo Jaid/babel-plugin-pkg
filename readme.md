@@ -5,7 +5,7 @@
 <a href="https://actions-badge.atrox.dev/jaid/babel-plugin-pkg/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaid%2Fbabel-plugin-pkg%2Fbadge" alt="Build status"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/commits-since/jaid/babel-plugin-pkg/v2.0.0?style=flat-square&logo=github" alt="Commits since v2.0.0"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/last-commit/jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/issues"><img src="https://img.shields.io/github/issues/jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Issues"/></a>  
 <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/v/babel-plugin-pkg?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/dm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Downloads"/></a>
 
-**Resolves process.env.REPLACE_PKG_VERSION to version from package.json - also works with any other field!**
+**Resolves _PKG_VERSION to version from package.json - also works with any other field!**
 
 
 This plugin attempts to dynamically replace expressions starting with `process.env.REPLACE_PKG_`.
