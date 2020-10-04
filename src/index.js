@@ -49,7 +49,7 @@ export default ({types}) => {
       fieldName = "name"
     }
     if (options.nameFallback && fieldName === "name" && !options.packageJson?.packageJson?.name) {
-      return path.basename(options.cwd)
+      return path.basename(path.dirname(options.packageJson.path))
     }
     if (options.packageJson?.packageJson?.[fieldName]) {
       return options.packageJson.packageJson[fieldName]
