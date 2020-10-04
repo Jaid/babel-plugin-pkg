@@ -5,9 +5,10 @@
 <a href="https://actions-badge.atrox.dev/jaid/babel-plugin-pkg/goto"><img src="https://img.shields.io/endpoint.svg?style=flat-square&url=https%3A%2F%2Factions-badge.atrox.dev%2Fjaid%2Fbabel-plugin-pkg%2Fbadge" alt="Build status"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/commits-since/jaid/babel-plugin-pkg/v2.0.0?style=flat-square&logo=github" alt="Commits since v2.0.0"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/commits"><img src="https://img.shields.io/github/last-commit/jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Last commit"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/issues"><img src="https://img.shields.io/github/issues/jaid/babel-plugin-pkg?style=flat-square&logo=github" alt="Issues"/></a>  
 <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/v/babel-plugin-pkg?style=flat-square&logo=npm&label=latest%20version" alt="Latest version on npm"/></a> <a href="https://github.com/jaid/babel-plugin-pkg/network/dependents"><img src="https://img.shields.io/librariesio/dependents/npm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Dependents"/></a> <a href="https://npmjs.com/package/babel-plugin-pkg"><img src="https://img.shields.io/npm/dm/babel-plugin-pkg?style=flat-square&logo=npm" alt="Downloads"/></a>
 
-**Resolves _PKG_VERSION to version from package.json - also works with any other field!**
+**Resolves process.env.REPLACE_PKG_VERSION to version from package.json - also works with any other field!**
 
 
+This plugin attempts to dynamically replace expressions starting with `process.env.REPLACE_PKG_`.
 
 
 
@@ -34,13 +35,72 @@ npm install --save-dev @jaid/babel-plugin-pkg@^2.0.0
 
 
 
+## Example
+
+Reference fields from your `package.json` in your source files.
+
+`package.json`
+```json
+{
+  "name": "readable-ms",
+  "version": "1.2.3"
+}
+```
+
+`src/index.js`
+```js
+console.log(`This is ${process.env.REPLACE_PKG_NAME} v${process.env.REPLACE_PKG_VERSION}`)
+```
+
+This will be transpiled to:
+`dist/index.js`
+```js
+console.log("This is readable-ms v1.2.3")
+```
 
 
 
+## Usage
+
+Add to your Babel configuration.
+
+`.babelrc.js`
+```js
+module.exports = {
+  plugins: [
+    "pkg"
+  ]
+}
+```
 
 
 
+## Options
 
+
+
+<table>
+<tr>
+<th></th>
+<th>Default</th>
+<th>Info</th>
+</tr>
+<tr>
+<td>cwd</td>
+<td>(determined by Babel)</td>
+<td>The directory which the search for the package.json file begins in.</td>
+</tr>
+<tr>
+<td>nameFallback</td>
+<td>true</td>
+<td>If true and package.json does not contain a "name" field, the folder name that contains the chosen package.json file will be used as replacement.</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>REPLACE_PKG_</td>
+<td>Only members of process.env starting with this string will be replaced.</td>
+</tr>
+</table>
 
 
 

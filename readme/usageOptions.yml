@@ -1,0 +1,9 @@
+cwd:
+  default: (determined by Babel)
+  info: The directory which the search for the package.json file begins in.
+prefix:
+  default: REPLACE_PKG_
+  info: Only members of process.env starting with this string will be replaced.
+nameFallback:
+  default: true
+  info: If true and package.json does not contain a "name" field, the folder name that contains the chosen package.json file will be used as replacement.
