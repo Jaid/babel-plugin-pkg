@@ -1,6 +1,6 @@
 {
   "webpackConfigJaid": "nodeLib",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
   "dependencies": {
     "camelcase": "^6.0.0",
