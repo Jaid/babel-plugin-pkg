@@ -60,5 +60,6 @@
     "transpile",
     "transpiler",
     "version"
-  ]
+  ],
+  "type": "module"
 }
